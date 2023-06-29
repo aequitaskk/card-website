@@ -2,11 +2,11 @@
 
 import { Abril_Fatface } from "next/font/google";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Button from "./Button";
-import { CiBaseball } from "react-icons/ci";
 import Image from "next/image";
+import hover3d from "../utils/hover";
 
 const abril = Abril_Fatface({
   subsets: ["latin"],
@@ -14,8 +14,16 @@ const abril = Abril_Fatface({
 });
 
 function Header() {
+  const hero = useRef<HTMLDivElement>(null);
+
+  const hoverHero = hover3d(hero, {
+    x: 30,
+    y: -40,
+    z: 30,
+  });
+
   return (
-    <HeaderStyled>
+    <HeaderStyled ref={hero}>
       <nav>
         <div>
           <h2>Logo</h2>
@@ -53,7 +61,7 @@ function Header() {
           </div>
         </div>
         <div className="image-content">
-          <div className="image">
+          <div className="image" style={{transform: hoverHero.transform}}>
             <Image
               src="/images/ohtani.png"
               alt="hero"
@@ -125,11 +133,11 @@ const HeaderStyled = styled.header`
         transition: all 0.1s linear;
         padding-bottom: 1.5rem;
       }
-      
+
       .buttons {
         display: flex;
-        gap:1rem;
-        margin-top:2.5rem;
+        gap: 1rem;
+        margin-top: 2.5rem;
       }
     }
 
