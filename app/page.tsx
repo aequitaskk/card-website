@@ -6,8 +6,8 @@ import { cards } from "./utils/cards";
 import Card from "./components/Card";
 import FullPage from "./components/FullPage";
 import TextSection from "./components/TextSection";
-import ZoomSection from "./components/ZoomSection";
 import HorizontalWrapper from "./components/HorizontalWrapper";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <MainStyled>
         <SectionLayout>
           <HorizontalWrapper height="40rem" direction={-1400}>
-            <div className="cards">
+            <div className="cards" style={{ right: 0 }}>
               {cards.map((card, index) => {
                 return (
                   <Card
@@ -54,9 +54,9 @@ export default function Home() {
           <TextSection />
         </SectionLayout>
 
-        {/* <SectionLayout>
-          <ZoomSection />
-        </SectionLayout> */}
+        <SectionLayout>
+          <Footer />
+        </SectionLayout>
       </MainStyled>
     </>
   );

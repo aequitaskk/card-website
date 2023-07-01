@@ -18,7 +18,7 @@ function HorizontalWrapper({ children, direction, height }: Props) {
 
   const xTransform = useTransform(
     scrollYProgress,
-    [0, 0.1, 1],
+    [0, 0.2, 1],
     [0, 0, direction]
   );
 

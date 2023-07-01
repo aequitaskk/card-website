@@ -25,8 +25,9 @@ function Header() {
   return (
     <HeaderStyled ref={hero}>
       <nav>
-        <div>
-          <h2>Logo</h2>
+        <div className="logo">
+          <Image src="/images/logo.png" alt="Logo" height={40} width={40} />
+          <h2>Baseball Card</h2>
         </div>
         <div className="input">
           <input type="text" placeholder="Search..." />
@@ -83,6 +84,17 @@ const HeaderStyled = styled.header`
     padding: 0 4rem;
     min-height: 10vh;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .nav-items {
