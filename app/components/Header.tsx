@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import Image from "next/image";
-import hover3d from "../utils/hover";
+import Hover3d from "../utils/hover";
 
 const abril = Abril_Fatface({
   subsets: ["latin"],
@@ -16,7 +16,7 @@ const abril = Abril_Fatface({
 function Header() {
   const hero = useRef<HTMLDivElement>(null);
 
-  const hoverHero = hover3d(hero, {
+  const hoverHero = Hover3d(hero, {
     x: 30,
     y: -40,
     z: 30,
